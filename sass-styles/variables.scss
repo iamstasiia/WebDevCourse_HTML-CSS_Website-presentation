@@ -1,6 +1,43 @@
-$text-color: black;
-$back-body: white;
-$back-secondary: #f3f4f6;
+@import url(https://fonts.bunny.net/css?family=libre-bodoni:400,400i|oswald:200,300,400,500,600,700|roboto:300,300i,400,400i,500,500i,700,700i);
+
+//font-family: 'Libre Bodoni', serif;
+//font-family: 'Oswald', sans-serif;
+//font-family: 'Roboto', sans-serif;
+
+$mc-text: #243033;
+$mc-body: white;
+$mc-light: #f3f4f6;
+$mc-danger: #E6506E;
+$mc-warning: #E0DE67;
+$mc-success: #7E9149;
+$mc-dark: #2B5C54;
+
+@mixin back-logo {
+    background-image: 
+    radial-gradient(75% 50% at 24% 75%, $mc-success 0%, #ffffff00 100%), 
+    radial-gradient(75% 50% at 75% 75%, $mc-danger 0%, #ffffff00 100%), 
+    radial-gradient(75% 50% at 75% 25%, $mc-warning 0%, #ffffff00 100%), 
+    radial-gradient(75% 50% at 25% 25%, $mc-dark 0%, #ffffff00 100%);
+}
+
+@mixin instagram {
+    background: 
+    radial-gradient(100% 100% at 25% 25%, #405DE6 0%, #ffffff00), 
+    radial-gradient(100% 100% at 75% 25%, #C13584 0%, #ffffff00 100%),
+    radial-gradient(100% 100% at 75% 75%, #F56040 0%, #ffffff00 100%),
+    radial-gradient(100% 100% at 25% 75%, #FFDC80 0%, #ffffff00 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+@mixin shop {
+    background: 
+    radial-gradient(100% 100% at 0% 50%, $mc-dark 0%, #ffffff00 100%), 
+    radial-gradient(100% 100% at 60% 25%, $mc-warning 0%, #ffffff00 100%),
+    radial-gradient(100% 100% at 100% 100%, $mc-danger 0%, #ffffff00 100%);
+    color: transparent;
+    -webkit-background-clip: text;
+}
 
 * {
     margin: 0;
@@ -12,5 +49,7 @@ $back-secondary: #f3f4f6;
 
 :root {
     font-size: 16px;
-    font-family: sans-serif;
+    color: $mc-text;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
 }
