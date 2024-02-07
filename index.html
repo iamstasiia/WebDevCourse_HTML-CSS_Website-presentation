@@ -52,7 +52,7 @@
         </div>
 
         <div class="separating-text">
-            <p>New Collection - 2024 - New Collection - 2024 - New Collection - 2024</p>
+            <p>2024 - New Collection - 2024 - New Collection - 2024 - New Collection - 2024 - New Collection</p>
         </div>
 
         <div class="container-right">
@@ -130,6 +130,43 @@
                     </ul>
                 </li>
             </ul>
+        </div>
+        <div class="message">
+            <form action="./data.html" method="get">
+                <fieldset>
+                    <legend>Schreiben Sie uns</legend>
+                    <div class="forms">
+                        <div class="form-left">
+                        <!-- Name: -->
+                            <label for="name">Ihr Name</label>
+                            <input type="text" name="Name" id="name" placeholder="Vorname, Familienname" minlength="1" required>
+                        <!-- Anrede: -->
+                            <label for="Anrede">Wie können wir Sie kontaktieren?</label>
+                            <input type="radio" name="Anrede" value="Frau" id="frau">
+                            <label for="frau">Frau</label>
+                            <input type="radio" name="Anrede" value="Herr" id="herr">
+                            <label for="herr">Herr</label>
+                        <!-- Category: -->
+                            <select name="Category" id="category">
+                                <option value="zuschauer:in">Zuschauer:in</option>
+                                <option value="klient:in">Klient:in</option>
+                                <option value="hersteller:in">Hersteller:in</option>
+                            </select>
+                        <!-- Email: -->
+                            <label for="email">Email:</label>
+                            <input type="email" name="Email" id="email" placeholder="name@mail.com" required minlength="5">
+                            <input type="checkbox" name="News-Abonnement" value="Ja" id="news-abo">
+                            <label for="news-abo">Ich möchte Neuigkeiten über neue Produkte erhalten</label>
+                    </div>
+                    <div class="form-right">
+                        <!-- Comments: -->
+                            <label for="comments">Ihre Nachricht</label>
+                            <textarea name="Comments" id="comments" cols="30" rows="10"></textarea>   
+                    </div>
+                </div>
+                </fieldset>
+                <button type="submit">Schicken</button>
+            </form>
         </div>
     </footer>
 </body>
