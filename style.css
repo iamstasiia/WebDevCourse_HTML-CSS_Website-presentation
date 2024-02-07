@@ -1,4 +1,4 @@
-@import url(https://fonts.bunny.net/css?family=alex-brush:400|allison:400|babylonica:400|libre-bodoni:400,400i|oswald:200,300,400,500,600,700|roboto:300,300i,400,400i,500,500i,700,700i);
+@import url(https://fonts.bunny.net/css?family=libre-bodoni:400,400i|oswald:200,300,400,500,600,700|roboto:300,300i,400,400i,500,500i,700,700i);
 * {
   margin: 0;
   padding: 0;
@@ -14,10 +14,35 @@
   font-weight: 300;
 }
 
-.main-page {
+.main-part {
   min-height: 100vh;
+}
+.main-part .disclaimer {
+  background: #E6506E;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.2rem;
+  min-height: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.main-part .disclaimer a {
+  padding: 0.1rem 0.3rem;
+  color: #E0DE67;
+  display: inline-block;
+  background: #243033;
+}
+.main-part .disclaimer a:hover {
+  background: #2B5C54;
+  color: #E6506E;
+  text-decoration: underline;
+}
+.main-part .main-containers {
   display: flex;
   gap: 1rem;
+  min-height: calc(100vh - 30px);
 }
 
 .container-left {
@@ -326,31 +351,31 @@ footer #contacts > ul > li ul {
   }
 }
 @media screen and (max-width: 682px) {
-  .main-page {
+  .main-containers {
     flex-direction: column;
   }
-  .main-page .container-left {
+  .main-containers .container-left {
     width: 100%;
     border-right: none;
   }
-  .main-page .separating-text {
+  .main-containers .separating-text {
     writing-mode: horizontal-tb;
     transform: none;
   }
-  .main-page .container-right {
+  .main-containers .container-right {
     width: 100%;
-    margin-left: 1rem;
+    margin-bottom: 1rem;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 20rem;
     grid-auto-flow: row;
   }
-  .main-page .container-right div:nth-of-type(1) {
+  .main-containers .container-right div:nth-of-type(1) {
     grid-row: span 1;
   }
-  .main-page .container-right div:nth-of-type(2) {
+  .main-containers .container-right div:nth-of-type(2) {
     grid-row: span 1;
   }
-  .main-page .container-right div:nth-of-type(5) {
+  .main-containers .container-right div:nth-of-type(5) {
     grid-row: span 1;
   }
 }

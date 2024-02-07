@@ -1,9 +1,38 @@
 @import "variables";
 
-.main-page {
+.main-part {
     min-height: 100vh;
-    display: flex;
-    gap: 1rem;
+
+    .disclaimer {
+        background: $mc-danger;
+        text-align: center;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: .2rem;
+        min-height: 30px;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        a {
+            padding: .1rem .3rem;
+            color: $mc-warning;
+            display: inline-block;
+            background: $mc-text;
+
+            &:hover {
+                background: $mc-dark;
+                color: $mc-danger;
+                text-decoration: underline;
+            }
+        }
+    } 
+
+    .main-containers {
+        display: flex;
+        gap: 1rem;
+        min-height: calc(100vh - 30px);
+    }
 }
 
 .container-left {
@@ -124,9 +153,7 @@
         padding: 2rem 2rem 3rem 2rem;
         text-align: center;
 
-        h2 {
-            font-size: 1.5rem;
-        }
+        h2 {font-size: 1.5rem;}
         
         ul {
             margin-top: 1rem;
@@ -155,7 +182,7 @@
                 &:nth-child(4) a {color: #E60023;}
             }
         }
-    }    
+    }
 }
 
 .separating-text {
@@ -186,9 +213,7 @@
     //     border-radius: 1rem;
     // }
 
-    div {
-        border-radius: 1.5rem;
-    }
+    div {border-radius: 1.5rem;}
 
     a {
         display: block;
@@ -280,6 +305,7 @@ footer {
     }
 }
 
+
 @media screen and (max-width: 992px) {
     .container-right {
         grid-template-columns: repeat(2, 1fr);
@@ -313,7 +339,7 @@ footer {
 }
 
 @media screen and (max-width: 682px) {
-    .main-page {
+    .main-containers {
         flex-direction: column;
 
         .container-left {
@@ -328,7 +354,7 @@ footer {
 
         .container-right {
             width: 100%;
-            margin-left: 1rem;
+            margin-bottom: 1rem;
             grid-template-columns: repeat(3, 1fr);
             grid-template-rows: 20rem;
             grid-auto-flow: row;
