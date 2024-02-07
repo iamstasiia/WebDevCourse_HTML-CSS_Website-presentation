@@ -1,4 +1,7 @@
 @import "variables";
+@import "animations";
+@import "footer";
+@import "mediaqueries";
 
 .main-part {
     min-height: 100vh;
@@ -122,13 +125,6 @@
                 -webkit-background-clip: text;
                 animation: header-span 5s ease 1s infinite;
             }
-
-            @keyframes header-span {
-                50% {
-                    background: url(../images/back-50-160.gif) center/60px;
-                    -webkit-background-clip: text;
-                }
-            }
         }
     }
 
@@ -214,12 +210,14 @@
     //     border-radius: 1rem;
     // }
 
-    div {border-radius: 1.5rem;}
-
-    a {
-        display: block;
-        width: 100%;
-        height: 100%;
+    div {
+        border-radius: 1.5rem;
+    
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
     }
     
     div:nth-of-type(1) {
@@ -232,8 +230,10 @@
     }
 
     div:nth-of-type(2) {
-        background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_01-300x450.jpg) center/cover;
+        background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_01-300x450.jpg) center/cover; 
+        animation: photos-02 10s ease infinite;
     }
+
     div:nth-of-type(3) {
         grid-row: span 4;
         background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-bl-229-087-l-2_04-300x450.jpg) center/cover;
@@ -247,196 +247,23 @@
     }
     div:nth-of-type(6) {
         grid-row: span 5;
-        background: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_04-300x450.jpg) center/cover;}
+        background: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_04-300x450.jpg) center/cover;
+        animation: photos-06 10s ease 3s infinite;
+    }
+    
     div:nth-of-type(7) {
         grid-row: span 4;
-        background: url(https://etnoxata.com.ua/image/cache/catalog/1110/1110-8000-1_01-300x450.jpg) center/cover;}
+        background: url(https://etnoxata.com.ua/image/cache/catalog/1110/1110-8000-1_01-300x450.jpg) center/cover;
+    }
+
     div:nth-of-type(8) {
         background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_01-300x450.jpg) center/cover;
+        animation: photos-08 10s ease 6s infinite;
     }
+
     div:nth-of-type(9) {
         grid-row: span 6;
         background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-60-6_05-300x450.jpg) center/cover;
-        }
-}
-
-footer {
-    border-top: 1px solid $mc-text;
-    padding-top: 1rem;
-    color: $mc-light;
-
-    #contacts {
-        background: $mc-text;
-
-        h2 {
-            padding: 1rem;
-        }
-
-        > ul {
-            font-size: 1.1rem;
-            text-align: center;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1px;
-            background: $mc-light;
-            padding-top: 1px;
-
-            > li {
-                font-weight: bold;
-                padding: 1rem;
-                flex-grow: 1;
-                background: $mc-text;
-
-
-                &:nth-of-type(1), &:nth-of-type(3) {
-                    min-width: calc(40% - 2.1rem);
-                }
-                
-                &:nth-of-type(2) {
-                    min-width: calc(20% + 4.2rem - 2px);
-                }
-
-                ul {
-                    font-weight: normal;
-                    padding-top: 1rem;
-                }
-            }
-        }
-    }
-
-    .message {
-        background: $mc-text;
-        margin-top: 1rem;
-        padding: 2rem;
-
-        form {
-            display: flex;
-            gap: 1rem;
-            flex-direction: column;
-            align-items: center;
-
-            button {
-                background: none;
-                color: $mc-light;
-                padding: .5rem 1rem;
-                border: 1px solid $mc-light;
-                border-radius: .5rem;
-                font-size: 1.2rem;
-                font-weight: 500;
-                cursor: pointer;
-                transition: all .5s linear;
-
-                &:hover {
-                    color: $mc-text;
-                    border-color: $mc-warning;
-                    background: $mc-success;
-                }
-            }
-        }
-
-        fieldset {
-            border: none;
-            border: 1px solid $mc-light;
-            padding: 1rem 0;
-            width: 100%;
-
-            legend {
-                font-size: 1.2rem;
-                font-weight: 400;
-            }
-
-            .forms {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 1px;
-
-                .form-left, .form-right {
-                    width: 30rem;
-                    padding: 0 2rem 2rem 2rem;
-                    background: $mc-text;
-                }
-
-                input[type="text"], select, input[type="email"], textarea {
-                    width: 100%;
-                    padding: .5rem;
-                    font-size: 1rem;
-                    border-radius: .5rem;
-                    margin-bottom: 1rem;
-                }
-
-                label[for="frau"], label[for="herr"] {
-                    font-size: 1rem;
-                    font-weight: 500;
-                    margin-right: .5rem;
-                }
-
-                select {margin-top: 1rem;}
-
-                textarea {height: 92%;}
-            }
-        }
     }
 }
 
-
-@media screen and (max-width: 992px) {
-    .container-right {
-        grid-template-columns: repeat(2, 1fr);
-
-        div:nth-of-type(1) {grid-row: span 4;}
-        div:nth-of-type(2) {grid-row: span 6;}
-        div:nth-of-type(3) {grid-row: span 3;}
-        div:nth-of-type(4) {display: none;}
-        div:nth-of-type(5) {grid-row: span 5;}
-
-        div:nth-of-type(6) {grid-row: span 3;}
-        div:nth-of-type(7) {grid-row: span 5;}
-        div:nth-of-type(8) {grid-row: span 6;}
-        div:nth-of-type(9) {grid-row: span 4;}
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .container-right {
-        grid-template-columns: 1fr;
-
-        div:nth-of-type(1) {grid-row: span 5;}
-        div:nth-of-type(2) {grid-row: span 7;}
-        div:nth-of-type(3) {display: none;}
-        div:nth-of-type(5) {grid-row: span 6;}
-        div:nth-of-type(6) {display: none;}
-        div:nth-of-type(7) {display: none;}
-        div:nth-of-type(8) {display: none;}
-        div:nth-of-type(9) {display: none;}
-    }
-}
-
-@media screen and (max-width: 682px) {
-    .main-containers {
-        flex-direction: column;
-
-        .container-left {
-            width: 100%;
-            border-right: none;
-        }
-
-        .separating-text {
-            writing-mode: horizontal-tb;
-            transform: none;
-        }
-
-        .container-right {
-            width: 100%;
-            margin-bottom: 1rem;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: 20rem;
-            grid-auto-flow: row;
-            
-            div:nth-of-type(1) {grid-row: span 1;}
-            div:nth-of-type(2) {grid-row: span 1;}
-            div:nth-of-type(5) {grid-row: span 1;}
-        }
-    }
-}

@@ -1,0 +1,61 @@
+@keyframes header-span {
+    50% {
+        background: url(../images/back-50-160.gif) center/60px;
+        -webkit-background-clip: text;
+    }
+}
+
+// PHOTOS GRID
+@keyframes photos-02 {
+    35% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_01-300x450.jpg)
+    }
+
+    50% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_03-300x450.jpg);
+    }
+
+    85% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_03-300x450.jpg);
+    }
+
+    100% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_01-300x450.jpg)
+    }
+}
+
+@keyframes photos-06 {
+    35% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_04-300x450.jpg);
+    }
+
+    50% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_02-300x450.jpg);
+    }
+
+    85% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_02-300x450.jpg);
+    }
+
+    100% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_04-300x450.jpg);
+    }
+}
+
+@keyframes photos-08 {
+    35% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_01-300x450.jpg);
+    }
+
+    50% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_05-300x450.jpg);
+    } 
+
+    85% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_05-300x450.jpg);
+    }
+
+    100% {
+        background-image: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_01-300x450.jpg);
+    }
+}

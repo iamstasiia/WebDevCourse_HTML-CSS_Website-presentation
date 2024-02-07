@@ -1,0 +1,119 @@
+footer {
+    border-top: 1px solid $mc-text;
+    padding-top: 1rem;
+    color: $mc-light;
+
+    #contacts {
+        background: $mc-text;
+
+        h2 {
+            padding: 1rem;
+        }
+
+        > ul {
+            font-size: 1.1rem;
+            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1px;
+            background: $mc-light;
+            padding-top: 1px;
+
+            > li {
+                font-weight: bold;
+                padding: 1rem;
+                flex-grow: 1;
+                background: $mc-text;
+
+
+                &:nth-of-type(1), &:nth-of-type(3) {
+                    min-width: calc(40% - 2.1rem);
+                }
+                
+                &:nth-of-type(2) {
+                    min-width: calc(20% + 4.2rem - 2px);
+                }
+
+                ul {
+                    font-weight: normal;
+                    padding-top: 1rem;
+                }
+            }
+        }
+    }
+
+    .message {
+        background: $mc-text;
+        margin-top: 1rem;
+        padding: 2rem;
+
+        form {
+            display: flex;
+            gap: 1rem;
+            flex-direction: column;
+            align-items: center;
+
+            button {
+                background: none;
+                color: $mc-light;
+                padding: .5rem 1rem;
+                border: 1px solid $mc-light;
+                border-radius: .5rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                cursor: pointer;
+                transition: all .5s linear;
+
+                &:hover {
+                    color: $mc-text;
+                    border-color: $mc-danger;
+                    background: $mc-danger;
+                }
+            }
+        }
+
+        fieldset {
+            border: none;
+            border: 1px solid $mc-light;
+            padding: 1rem 0;
+            width: 100%;
+
+            legend {
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+
+            .forms {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1px;
+
+                .form-left, .form-right {
+                    width: 30rem;
+                    padding: 0 2rem 2rem 2rem;
+                    background: $mc-text;
+                }
+
+                input[type="text"], select, input[type="email"], textarea {
+                    width: 100%;
+                    padding: .5rem;
+                    font-size: 1rem;
+                    border-radius: .5rem;
+                    margin-bottom: 1rem;
+                }
+
+                label[for="frau"], label[for="herr"] {
+                    font-size: 1rem;
+                    font-weight: 500;
+                    margin-right: .5rem;
+                }
+
+                select {margin-top: 1rem;}
+
+                textarea {height: 92%;}
+            }
+        }
+    }
+}
