@@ -14,6 +14,17 @@
   font-weight: 300;
 }
 
+body ::-webkit-scrollbar {
+  width: 10px;
+}
+body ::-webkit-scrollbar-horizontal {
+  height: 10px;
+}
+body ::-webkit-scrollbar-thumb {
+  background-color: #2B5C54;
+  border-radius: 10px;
+}
+
 @keyframes header-span {
   50% {
     background: url(./images/back-50-160.jpg) center/60px;
@@ -99,18 +110,79 @@ footer #contacts > ul > li ul {
   font-weight: normal;
   padding-top: 1rem;
 }
-footer .message {
+footer .feedback {
   background: #243033;
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 2rem;
 }
-footer .message form {
+footer .feedback form {
   display: flex;
   gap: 1rem;
   flex-direction: column;
   align-items: center;
 }
-footer .message form button {
+footer .feedback form fieldset {
+  border: none;
+  border: 1px solid #f3f4f6;
+  padding: 1rem 0;
+  width: 100%;
+}
+footer .feedback form fieldset legend {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+footer .feedback form fieldset .forms {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1px;
+}
+footer .feedback form fieldset .forms .form-left, footer .feedback form fieldset .forms .form-right {
+  width: 30rem;
+  padding: 0 2rem 2rem 2rem;
+  background: #243033;
+}
+footer .feedback form fieldset .forms input[type=text], footer .feedback form fieldset .forms select, footer .feedback form fieldset .forms input[type=email], footer .feedback form fieldset .forms textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+footer .feedback form fieldset .forms input[type=radio] {
+  appearance: none;
+  background-color: #f3f4f6;
+  border-radius: 50%;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0 0.2rem -0.2rem 1rem;
+}
+footer .feedback form fieldset .forms input[type=radio]:checked {
+  background-color: #7E9149;
+  border: 3px solid white;
+}
+footer .feedback form fieldset .forms label[for=frau], footer .feedback form fieldset .forms label[for=herr] {
+  font-size: 1rem;
+  font-weight: 500;
+}
+footer .feedback form fieldset .forms select {
+  margin-top: 1rem;
+}
+footer .feedback form fieldset .forms input[type=checkbox] {
+  appearance: none;
+  background-color: #f3f4f6;
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0 0.2rem -0.2rem 0;
+}
+footer .feedback form fieldset .forms input[type=checkbox]:checked {
+  background-color: #7E9149;
+  border: 3px solid white;
+}
+footer .feedback form fieldset .forms textarea {
+  height: 92%;
+}
+footer .feedback form button {
   background: none;
   color: #f3f4f6;
   padding: 0.5rem 1rem;
@@ -119,108 +191,80 @@ footer .message form button {
   font-size: 1.2rem;
   font-weight: 500;
   cursor: pointer;
-  transition: all 0.5s linear;
+  transition: all 0.2s linear;
 }
-footer .message form button:hover {
+footer .feedback form button:hover {
   color: #243033;
   border-color: #E6506E;
   background: #E6506E;
 }
-footer .message fieldset {
-  border: none;
-  border: 1px solid #f3f4f6;
-  padding: 1rem 0;
-  width: 100%;
-}
-footer .message fieldset legend {
-  font-size: 1.2rem;
-  font-weight: 400;
-}
-footer .message fieldset .forms {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1px;
-}
-footer .message fieldset .forms .form-left, footer .message fieldset .forms .form-right {
-  width: 30rem;
-  padding: 0 2rem 2rem 2rem;
-  background: #243033;
-}
-footer .message fieldset .forms input[type=text], footer .message fieldset .forms select, footer .message fieldset .forms input[type=email], footer .message fieldset .forms textarea {
-  width: 100%;
-  padding: 0.5rem;
-  font-size: 1rem;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-}
-footer .message fieldset .forms label[for=frau], footer .message fieldset .forms label[for=herr] {
-  font-size: 1rem;
-  font-weight: 500;
-  margin-right: 0.5rem;
-}
-footer .message fieldset .forms select {
-  margin-top: 1rem;
-}
-footer .message fieldset .forms textarea {
-  height: 92%;
-}
 
-@media screen and (max-width: 1260px) {
-  .sizes-part .size-containers {
+@media screen and (max-width: 1280px) {
+  body {
+    overflow-x: hidden;
+  }
+  .sizes-start .size-containers {
     flex-direction: column;
   }
-  .sizes-part .size-containers .size-cont-left {
+  .sizes-start .size-containers .size-cont-left {
     width: 100%;
     border: none;
   }
-  .sizes-part .size-containers .size-cont-left main {
-    height: 30vh;
-  }
-  .sizes-part .size-containers .separating-text {
+  .sizes-start .size-containers .separating-text {
     writing-mode: horizontal-tb;
     transform: none;
   }
-  .sizes-part .size-containers .size-cont-right {
+  .sizes-start .size-containers .size-cont-right {
     width: 100%;
     border: none;
+  }
+  .sizes-start .size-containers .size-cont-right .size-table {
     overflow: scroll;
   }
 }
+@media screen and (max-width: 1200px) {
+  .main-cont-right {
+    gap: 1rem !important;
+  }
+}
 @media screen and (max-width: 992px) {
-  .main-containers .main-cont-right {
+  .main-cont-right {
     grid-template-columns: repeat(2, 1fr) !important;
   }
-  .main-containers .main-cont-right div:nth-of-type(7) {
+  .main-cont-right div:nth-of-type(7) {
     display: none;
   }
-  .main-containers .main-cont-right div:nth-of-type(8) {
+  .main-cont-right div:nth-of-type(8) {
     display: none;
   }
-  .main-containers .main-cont-right div:nth-of-type(9) {
+  .main-cont-right div:nth-of-type(9) {
     display: none;
   }
 }
-@media screen and (max-width: 768px) {
-  .main-containers .main-cont-right {
+@media screen and (max-width: 760px) {
+  .main-cont-left {
+    width: 50% !important;
+  }
+  .main-cont-right {
+    width: 50% !important;
     grid-template-columns: 1fr !important;
   }
-  .main-containers .main-cont-right div:nth-of-type(4) {
+  .main-cont-right div:nth-of-type(4) {
     display: none;
   }
-  .main-containers .main-cont-right div:nth-of-type(5) {
+  .main-cont-right div:nth-of-type(5) {
     display: none;
   }
-  .main-containers .main-cont-right div:nth-of-type(6) {
+  .main-cont-right div:nth-of-type(6) {
     display: none;
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 576px) {
   .main-containers {
     flex-direction: column;
   }
   .main-containers .main-cont-left {
-    width: 100%;
+    width: 100% !important;
     border-right: none;
   }
   .main-containers .separating-text {
@@ -241,16 +285,24 @@ footer .message fieldset .forms textarea {
   .main-containers .main-cont-right div:nth-of-type(3) {
     grid-row: 1/2 !important;
   }
-}
-@media screen and (max-width: 582px) {
-  .size-cont-left header h1 {
-    width: min-content;
+  .main-containers .main-cont-right div:hover > a {
+    visibility: hidden;
+  }
+  .feedback {
+    padding: 1rem 1rem 4rem 1rem !important;
+  }
+  .feedback .form-left, .feedback .form-right {
+    width: 100% !important;
+    padding: 0 1.5rem 2rem 1.5rem !important;
+  }
+  .feedback .fr-or-hr {
+    display: block;
   }
 }
-.sizes-part {
+.sizes-start {
   min-height: 100vh;
 }
-.sizes-part .size-containers {
+.sizes-start .size-containers {
   display: flex;
   gap: 1rem;
   min-height: calc(100vh - 30px);
@@ -273,14 +325,10 @@ footer .message fieldset .forms textarea {
   gap: 1rem;
   padding: 1rem;
 }
-.size-cont-left header .logo {
-  width: 5rem;
-  background-image: radial-gradient(75% 50% at 24% 75%, #7E9149 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 75%, #E6506E 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 25%, #E0DE67 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 25% 25%, #2B5C54 0%, rgba(255, 255, 255, 0) 100%);
-}
 .size-cont-left header h1 {
   text-align: center;
   font-size: 5rem;
-  line-height: 5rem;
+  line-height: calc(5rem + 4px);
   word-spacing: -1.5rem;
   font-family: "Oswald", sans-serif;
 }
@@ -296,6 +344,7 @@ footer .message fieldset .forms textarea {
   animation: header-span 5s ease 1s infinite;
 }
 .size-cont-left main {
+  min-height: 30vh;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040_bl_206_070_d_02_02_315-300x450.jpg) center/cover;
   padding: 1rem;
 }
@@ -354,10 +403,12 @@ footer .message fieldset .forms textarea {
 }
 .size-cont-right header nav {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  height: calc(5rem + 4px);
+}
+.size-cont-right header nav .logo {
+  width: 5rem;
+  background-image: radial-gradient(75% 50% at 24% 75%, #7E9149 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 75%, #E6506E 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 25%, #E0DE67 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 25% 25%, #2B5C54 0%, rgba(255, 255, 255, 0) 100%);
 }
 .size-cont-right header nav > ul {
   display: flex;
@@ -377,6 +428,7 @@ footer .message fieldset .forms textarea {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s linear;
+  z-index: 1;
 }
 .size-cont-right header nav > ul > li:hover > ul {
   opacity: 1;
@@ -435,7 +487,7 @@ footer .message fieldset .forms textarea {
 }
 .size-cont-right table thead th {
   border-right: 0.5rem solid #f3f4f6;
-  background: hsl(170, 36%, 26%);
+  background: #2B5C54;
   padding: 0.5rem;
   color: white;
 }
@@ -478,10 +530,10 @@ footer .message fieldset .forms textarea {
   text-decoration: underline;
 }
 
-.main-part {
+.main-start {
   min-height: 100vh;
 }
-.main-part .main-containers {
+.main-start .main-containers {
   display: flex;
   gap: 1rem;
   min-height: calc(100vh - 30px);
@@ -523,6 +575,7 @@ footer .message fieldset .forms textarea {
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.5s linear;
+  z-index: 1;
 }
 .main-cont-left header nav > ul > li:hover > ul {
   opacity: 1;
@@ -634,7 +687,7 @@ footer .message fieldset .forms textarea {
   font-family: "Oswald", sans-serif;
 }
 
-.main-part .main-cont-right {
+.main-cont-right {
   width: 60%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -643,12 +696,12 @@ footer .message fieldset .forms textarea {
   gap: 1.5rem;
   margin-right: 1rem;
 }
-.main-part .main-cont-right div {
+.main-cont-right div {
   border-radius: 1.2rem;
   box-shadow: inset rgba(0, 0, 0, 0.45) 15px 15px 20px -20px;
   position: relative;
 }
-.main-part .main-cont-right div a {
+.main-cont-right div a {
   min-width: 60%;
   padding: 0.3rem;
   position: absolute;
@@ -665,57 +718,57 @@ footer .message fieldset .forms textarea {
   visibility: hidden;
   transition: all 0.5s ease;
 }
-.main-part .main-cont-right div a i {
+.main-cont-right div a i {
   margin-left: 0.5rem;
 }
-.main-part .main-cont-right div a:hover {
+.main-cont-right div a:hover {
   background: rgba(0, 0, 0, 0.5);
   color: white;
 }
-.main-part .main-cont-right div a:active {
+.main-cont-right div a:active {
   transform: scale(90%);
 }
-.main-part .main-cont-right div:hover > a {
+.main-cont-right div:hover > a {
   visibility: visible;
   opacity: 1;
   bottom: 15%;
 }
-.main-part .main-cont-right div:nth-of-type(1) {
+.main-cont-right div:nth-of-type(1) {
   grid-row: span 6;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-1-3_03-300x450.jpg) center/cover;
 }
-.main-part .main-cont-right div:nth-of-type(2), .main-part .main-cont-right div:nth-of-type(5), .main-part .main-cont-right div:nth-of-type(8) {
+.main-cont-right div:nth-of-type(2), .main-cont-right div:nth-of-type(5), .main-cont-right div:nth-of-type(8) {
   grid-row: span 8;
 }
-.main-part .main-cont-right div:nth-of-type(2) {
+.main-cont-right div:nth-of-type(2) {
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_01-300x450.jpg) center/cover;
   animation: photos-02 10s ease infinite;
 }
-.main-part .main-cont-right div:nth-of-type(3) {
+.main-cont-right div:nth-of-type(3) {
   grid-row: span 4;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-bl-229-087-l-2_04-300x450.jpg) center/cover;
 }
-.main-part .main-cont-right div:nth-of-type(4) {
+.main-cont-right div:nth-of-type(4) {
   grid-row: span 5;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-pl-050-087-ks-2_03-300x450.jpg) center/cover;
 }
-.main-part .main-cont-right div:nth-of-type(5) {
+.main-cont-right div:nth-of-type(5) {
   background: url(https://etnoxata.com.ua/image/cache/catalog/180/180-23033_102-300x450.jpg) center/cover;
 }
-.main-part .main-cont-right div:nth-of-type(6) {
+.main-cont-right div:nth-of-type(6) {
   grid-row: span 5;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_04-300x450.jpg) center/cover;
   animation: photos-06 10s ease 3s infinite;
 }
-.main-part .main-cont-right div:nth-of-type(7) {
+.main-cont-right div:nth-of-type(7) {
   grid-row: span 4;
   background: url(https://etnoxata.com.ua/image/cache/catalog/1110/1110-8000-1_01-300x450.jpg) center/cover;
 }
-.main-part .main-cont-right div:nth-of-type(8) {
+.main-cont-right div:nth-of-type(8) {
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_01-300x450.jpg) center/cover;
   animation: photos-08 10s ease 6s infinite;
 }
-.main-part .main-cont-right div:nth-of-type(9) {
+.main-cont-right div:nth-of-type(9) {
   grid-row: span 6;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-60-6_05-300x450.jpg) center/cover;
 }

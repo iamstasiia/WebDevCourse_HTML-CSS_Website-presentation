@@ -1,4 +1,4 @@
-.sizes-part {
+.sizes-start {
     min-height: 100vh;
 
     .size-containers {
@@ -24,16 +24,11 @@
         align-items: center;
         gap: 1rem;
         padding: 1rem;
-
-        .logo {
-            width: 5rem;
-            @include back-logo;
-        }
             
         h1 {
             text-align: center;
             font-size: 5rem;
-            line-height: 5rem;
+            line-height: calc(5rem + 4px);
             word-spacing: -1.5rem;
             font-family: 'Oswald', sans-serif;
 
@@ -53,6 +48,7 @@
     }
 
     main {
+        min-height: 30vh;
         background: url(https://etnoxata.com.ua/image/cache/catalog/040/040_bl_206_070_d_02_02_315-300x450.jpg) center/cover;
         padding: 1rem;
     }
@@ -105,10 +101,13 @@
 
         nav {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
-            padding: 1rem;
-            height: calc(5rem + 4px);
+
+            .logo {
+                width: 5rem;
+                @include back-logo;
+            }
 
             > ul {
                 display: flex;
@@ -128,6 +127,7 @@
                         opacity: 0;
                         visibility: hidden;
                         transition: opacity .5s linear;
+                        z-index: 1;
                     }
 
                     &:hover > ul{
@@ -152,10 +152,8 @@
         }
             
         h1 {
-            //text-align: center;
             font-size: 5rem;
             word-spacing: -1.5rem;
-            //padding: 3rem 1rem;
             font-family: 'Oswald', sans-serif;
             margin-top: -1.4rem;
             margin-bottom: -1.4rem;
@@ -163,12 +161,10 @@
             strong {
                 color: black;
                 display: inline-block;
-                //width: 240px;
             }
 
             span {
                 display: inline-block;
-                //width: 240px;
                 background: url(../images/back-63-384.gif) center/60px;
                 color: transparent;
                 -webkit-background-clip: text;
@@ -206,7 +202,7 @@
         thead {
             th {
                 border-right: .5rem solid $mc-light;
-                background: hsl(170, 36%, 26%);
+                background: $mc-dark;
                 padding: .5rem;
                 color: $mc-body;
 

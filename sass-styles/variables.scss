@@ -54,4 +54,22 @@ $mc-dark-50: hsla(170, 36%, 26%, 50%);
     color: $mc-text;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
+
+    
+}
+
+body {
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    ::-webkit-scrollbar-horizontal {
+        height: 10px;
+
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        background-color: $mc-dark;
+        border-radius: 10px;
+    }
 }
