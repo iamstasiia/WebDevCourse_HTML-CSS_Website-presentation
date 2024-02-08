@@ -166,72 +166,60 @@ footer .message fieldset .forms textarea {
   height: 92%;
 }
 
+@media screen and (max-width: 1260px) {
+  .sizes-part .size-containers {
+    flex-direction: column;
+  }
+  .sizes-part .size-containers .size-cont-left {
+    width: 100%;
+    border: none;
+  }
+  .sizes-part .size-containers .size-cont-left main {
+    height: 30vh;
+  }
+  .sizes-part .size-containers .separating-text {
+    writing-mode: horizontal-tb;
+    transform: none;
+  }
+  .sizes-part .size-containers .size-cont-right {
+    width: 100%;
+    border: none;
+    overflow: scroll;
+  }
+}
 @media screen and (max-width: 992px) {
-  .container-right {
-    grid-template-columns: repeat(2, 1fr);
+  .main-containers .main-cont-right {
+    grid-template-columns: repeat(2, 1fr) !important;
   }
-  .container-right div:nth-of-type(1) {
-    grid-row: span 4;
-  }
-  .container-right div:nth-of-type(2) {
-    grid-row: span 6;
-  }
-  .container-right div:nth-of-type(3) {
-    grid-row: span 3;
-  }
-  .container-right div:nth-of-type(4) {
+  .main-containers .main-cont-right div:nth-of-type(7) {
     display: none;
   }
-  .container-right div:nth-of-type(5) {
-    grid-row: span 5;
+  .main-containers .main-cont-right div:nth-of-type(8) {
+    display: none;
   }
-  .container-right div:nth-of-type(6) {
-    grid-row: span 3;
-  }
-  .container-right div:nth-of-type(7) {
-    grid-row: span 5;
-  }
-  .container-right div:nth-of-type(8) {
-    grid-row: span 6;
-  }
-  .container-right div:nth-of-type(9) {
-    grid-row: span 4;
+  .main-containers .main-cont-right div:nth-of-type(9) {
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {
-  .container-right {
-    grid-template-columns: 1fr;
+  .main-containers .main-cont-right {
+    grid-template-columns: 1fr !important;
   }
-  .container-right div:nth-of-type(1) {
-    grid-row: span 5;
-  }
-  .container-right div:nth-of-type(2) {
-    grid-row: span 7;
-  }
-  .container-right div:nth-of-type(3) {
+  .main-containers .main-cont-right div:nth-of-type(4) {
     display: none;
   }
-  .container-right div:nth-of-type(5) {
-    grid-row: span 6;
-  }
-  .container-right div:nth-of-type(6) {
+  .main-containers .main-cont-right div:nth-of-type(5) {
     display: none;
   }
-  .container-right div:nth-of-type(7) {
-    display: none;
-  }
-  .container-right div:nth-of-type(8) {
-    display: none;
-  }
-  .container-right div:nth-of-type(9) {
+  .main-containers .main-cont-right div:nth-of-type(6) {
     display: none;
   }
 }
-@media screen and (max-width: 682px) {
+@media screen and (max-width: 768px) {
   .main-containers {
     flex-direction: column;
   }
-  .main-containers .container-left {
+  .main-containers .main-cont-left {
     width: 100%;
     border-right: none;
   }
@@ -239,27 +227,235 @@ footer .message fieldset .forms textarea {
     writing-mode: horizontal-tb;
     transform: none;
   }
-  .main-containers .container-right {
-    width: 100%;
-    margin-bottom: 1rem;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 20rem;
-    grid-auto-flow: row;
+  .main-containers .main-cont-right {
+    width: 100% !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: 20rem !important;
   }
-  .main-containers .container-right div:nth-of-type(1) {
-    grid-row: span 1;
+  .main-containers .main-cont-right div:nth-of-type(1) {
+    grid-row: 1/2 !important;
   }
-  .main-containers .container-right div:nth-of-type(2) {
-    grid-row: span 1;
+  .main-containers .main-cont-right div:nth-of-type(2) {
+    grid-row: 1/2 !important;
   }
-  .main-containers .container-right div:nth-of-type(5) {
-    grid-row: span 1;
+  .main-containers .main-cont-right div:nth-of-type(3) {
+    grid-row: 1/2 !important;
   }
 }
-.main-part {
+@media screen and (max-width: 582px) {
+  .size-cont-left header h1 {
+    width: min-content;
+  }
+}
+.sizes-part {
   min-height: 100vh;
 }
-.main-part .disclaimer {
+.sizes-part .size-containers {
+  display: flex;
+  gap: 1rem;
+  min-height: calc(100vh - 30px);
+}
+
+.size-cont-left {
+  width: calc(40% - 2.1rem);
+  border-right: 1px solid #243033;
+  background-color: #f3f4f6;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content auto min-content;
+}
+.size-cont-left header {
+  border-bottom: 1px solid #243033;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+.size-cont-left header .logo {
+  width: 5rem;
+  background-image: radial-gradient(75% 50% at 24% 75%, #7E9149 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 75%, #E6506E 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 25%, #E0DE67 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 25% 25%, #2B5C54 0%, rgba(255, 255, 255, 0) 100%);
+}
+.size-cont-left header h1 {
+  text-align: center;
+  font-size: 5rem;
+  line-height: 5rem;
+  word-spacing: -1.5rem;
+  font-family: "Oswald", sans-serif;
+}
+.size-cont-left header h1 strong {
+  color: black;
+  display: inline-block;
+}
+.size-cont-left header h1 span {
+  display: inline-block;
+  background: url(../images/back-63-384.gif) center/60px;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: header-span 5s ease 1s infinite;
+}
+.size-cont-left main {
+  background: url(https://etnoxata.com.ua/image/cache/catalog/040/040_bl_206_070_d_02_02_315-300x450.jpg) center/cover;
+  padding: 1rem;
+}
+.size-cont-left .foot {
+  border-top: 1px solid #243033;
+  padding: 2rem 2rem 3rem 2rem;
+  text-align: center;
+}
+.size-cont-left .foot h2 {
+  font-size: 1.5rem;
+}
+.size-cont-left .foot ul {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.size-cont-left .foot ul li {
+  flex-grow: 1;
+}
+.size-cont-left .foot ul li a {
+  color: #7E9149;
+  font-size: 1.8rem;
+  padding: 0.5rem 1rem;
+  transition: box-shadow 0.6s ease;
+}
+.size-cont-left .foot ul li a:hover {
+  box-shadow: -4px -4px 24px #FBFCFE, 4px 4px 8px hsla(221, 20%, 43%, 0.5);
+}
+.size-cont-left .foot ul li:nth-child(1) a {
+  background: radial-gradient(100% 100% at 0% 50%, #2B5C54 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 60% 25%, #E0DE67 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 100% 100%, #E6506E 0%, rgba(255, 255, 255, 0) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.size-cont-left .foot ul li:nth-child(2) a {
+  color: #4267B2;
+}
+.size-cont-left .foot ul li:nth-child(3) a {
+  background: radial-gradient(100% 100% at 25% 25%, #405DE6 0%, rgba(255, 255, 255, 0)), radial-gradient(100% 100% at 75% 25%, #C13584 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 75% 75%, #F56040 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 25% 75%, #FFDC80 0%, rgba(255, 255, 255, 0) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.size-cont-left .foot ul li:nth-child(4) a {
+  color: #E60023;
+}
+
+.size-cont-right {
+  width: calc(60% + 2rem);
+  border-left: 1px solid #243033;
+  background: #f3f4f6;
+}
+.size-cont-right header {
+  padding: 1rem;
+  border-bottom: 1px solid #243033;
+}
+.size-cont-right header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+  height: calc(5rem + 4px);
+}
+.size-cont-right header nav > ul {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  font-size: 1.2rem;
+}
+.size-cont-right header nav > ul > li {
+  position: relative;
+}
+.size-cont-right header nav > ul > li > ul {
+  background: #E0DE67;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s linear;
+}
+.size-cont-right header nav > ul > li:hover > ul {
+  opacity: 1;
+  visibility: visible;
+}
+.size-cont-right header nav > ul a {
+  color: #2B5C54;
+  font-weight: bold;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: background 0.5s linear, color 0.2s linear;
+}
+.size-cont-right header nav > ul a:hover {
+  background: #E6506E;
+  color: #f3f4f6;
+}
+.size-cont-right header h1 {
+  font-size: 5rem;
+  word-spacing: -1.5rem;
+  font-family: "Oswald", sans-serif;
+  margin-top: -1.4rem;
+  margin-bottom: -1.4rem;
+}
+.size-cont-right header h1 strong {
+  color: black;
+  display: inline-block;
+}
+.size-cont-right header h1 span {
+  display: inline-block;
+  background: url(../images/back-63-384.gif) center/60px;
+  color: transparent;
+  -webkit-background-clip: text;
+  animation: header-span 5s ease 1s infinite;
+}
+.size-cont-right main {
+  padding: 1rem;
+}
+.size-cont-right main p {
+  margin: 1rem 0;
+  text-align: justify;
+}
+.size-cont-right main p strong {
+  font-size: 1.2rem;
+  font-family: "Libre Bodoni", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.size-cont-right main h4 {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.size-cont-right table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.size-cont-right table thead th {
+  border-right: 0.5rem solid #f3f4f6;
+  background: hsl(170, 36%, 26%);
+  padding: 0.5rem;
+  color: white;
+}
+.size-cont-right table thead th:nth-of-type(1) {
+  background: none;
+  color: #243033;
+}
+.size-cont-right table tbody td {
+  text-align: center;
+  border-right: 0.5rem solid #e6738a;
+  background: hsla(170, 36%, 26%, 0.5);
+  padding: 0.8rem;
+  font-family: "Oswald", sans-serif;
+}
+.size-cont-right table tbody th {
+  border-right: 0.5rem solid #e6738a;
+  background: #e6738a;
+}
+
+.disclaimer {
   background: #E6506E;
   text-align: center;
   font-weight: 700;
@@ -270,16 +466,20 @@ footer .message fieldset .forms textarea {
   top: 0;
   z-index: 1;
 }
-.main-part .disclaimer a {
+.disclaimer a {
   padding: 0.1rem 0.3rem;
   color: #E0DE67;
   display: inline-block;
   background: #243033;
 }
-.main-part .disclaimer a:hover {
+.disclaimer a:hover {
   background: #2B5C54;
   color: #E6506E;
   text-decoration: underline;
+}
+
+.main-part {
+  min-height: 100vh;
 }
 .main-part .main-containers {
   display: flex;
@@ -287,7 +487,7 @@ footer .message fieldset .forms textarea {
   min-height: calc(100vh - 30px);
 }
 
-.container-left {
+.main-cont-left {
   width: 40%;
   border-right: 1px solid #243033;
   background-color: #f3f4f6;
@@ -295,27 +495,27 @@ footer .message fieldset .forms textarea {
   grid-template-columns: 1fr;
   grid-template-rows: min-content auto min-content;
 }
-.container-left header nav {
+.main-cont-left header nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
 }
-.container-left header nav .logo {
+.main-cont-left header nav .logo {
   width: 5rem;
   background-image: radial-gradient(75% 50% at 24% 75%, #7E9149 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 75%, #E6506E 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 75% 25%, #E0DE67 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(75% 50% at 25% 25%, #2B5C54 0%, rgba(255, 255, 255, 0) 100%);
 }
-.container-left header nav > ul {
+.main-cont-left header nav > ul {
   display: flex;
   gap: 0.5rem;
   justify-content: flex-end;
   flex-wrap: wrap;
   font-size: 1.2rem;
 }
-.container-left header nav > ul > li {
+.main-cont-left header nav > ul > li {
   position: relative;
 }
-.container-left header nav > ul > li > ul {
+.main-cont-left header nav > ul > li > ul {
   background: #E0DE67;
   width: 100%;
   position: absolute;
@@ -324,22 +524,22 @@ footer .message fieldset .forms textarea {
   visibility: hidden;
   transition: opacity 0.5s linear;
 }
-.container-left header nav > ul > li:hover > ul {
+.main-cont-left header nav > ul > li:hover > ul {
   opacity: 1;
   visibility: visible;
 }
-.container-left header nav > ul a {
+.main-cont-left header nav > ul a {
   color: #2B5C54;
   font-weight: bold;
   display: block;
   padding: 0.5rem 1rem;
   transition: background 0.5s linear, color 0.2s linear;
 }
-.container-left header nav > ul a:hover {
+.main-cont-left header nav > ul a:hover {
   background: #E6506E;
   color: #f3f4f6;
 }
-.container-left header h1 {
+.main-cont-left header h1 {
   text-align: center;
   font-size: 5rem;
   word-spacing: -1.5rem;
@@ -348,14 +548,14 @@ footer .message fieldset .forms textarea {
   padding: 3rem 1rem;
   font-family: "Oswald", sans-serif;
 }
-.container-left header h1 strong {
+.main-cont-left header h1 strong {
   color: #f3f4f6;
   background-color: black;
   border: 1px solid black;
   display: inline-block;
   width: 240px;
 }
-.container-left header h1 span {
+.main-cont-left header h1 span {
   display: inline-block;
   width: 240px;
   border: 1px solid black;
@@ -364,60 +564,60 @@ footer .message fieldset .forms textarea {
   -webkit-background-clip: text;
   animation: header-span 5s ease 1s infinite;
 }
-.container-left main {
+.main-cont-left main {
   padding: 1rem;
 }
-.container-left main p {
+.main-cont-left main p {
   margin: 1rem 0;
   text-align: justify;
 }
-.container-left main p strong {
+.main-cont-left main p strong {
   font-size: 1.2rem;
   font-family: "Libre Bodoni", serif;
   font-weight: 400;
   font-style: italic;
 }
-.container-left .foot {
+.main-cont-left .foot {
   border-top: 1px solid #243033;
   padding: 2rem 2rem 3rem 2rem;
   text-align: center;
 }
-.container-left .foot h2 {
+.main-cont-left .foot h2 {
   font-size: 1.5rem;
 }
-.container-left .foot ul {
+.main-cont-left .foot ul {
   margin-top: 1rem;
   display: flex;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
-.container-left .foot ul li {
+.main-cont-left .foot ul li {
   flex-grow: 1;
 }
-.container-left .foot ul li a {
+.main-cont-left .foot ul li a {
   color: #7E9149;
   font-size: 1.8rem;
   padding: 0.5rem 1rem;
   transition: box-shadow 0.6s ease;
 }
-.container-left .foot ul li a:hover {
+.main-cont-left .foot ul li a:hover {
   box-shadow: -4px -4px 24px #FBFCFE, 4px 4px 8px hsla(221, 20%, 43%, 0.5);
 }
-.container-left .foot ul li:nth-child(1) a {
+.main-cont-left .foot ul li:nth-child(1) a {
   background: radial-gradient(100% 100% at 0% 50%, #2B5C54 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 60% 25%, #E0DE67 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 100% 100%, #E6506E 0%, rgba(255, 255, 255, 0) 100%);
   color: transparent;
   -webkit-background-clip: text;
 }
-.container-left .foot ul li:nth-child(2) a {
+.main-cont-left .foot ul li:nth-child(2) a {
   color: #4267B2;
 }
-.container-left .foot ul li:nth-child(3) a {
+.main-cont-left .foot ul li:nth-child(3) a {
   background: radial-gradient(100% 100% at 25% 25%, #405DE6 0%, rgba(255, 255, 255, 0)), radial-gradient(100% 100% at 75% 25%, #C13584 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 75% 75%, #F56040 0%, rgba(255, 255, 255, 0) 100%), radial-gradient(100% 100% at 25% 75%, #FFDC80 0%, rgba(255, 255, 255, 0) 100%);
   color: transparent;
   -webkit-background-clip: text;
 }
-.container-left .foot ul li:nth-child(4) a {
+.main-cont-left .foot ul li:nth-child(4) a {
   color: #E60023;
 }
 
@@ -434,7 +634,7 @@ footer .message fieldset .forms textarea {
   font-family: "Oswald", sans-serif;
 }
 
-.container-right {
+.main-part .main-cont-right {
   width: 60%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -443,12 +643,12 @@ footer .message fieldset .forms textarea {
   gap: 1.5rem;
   margin-right: 1rem;
 }
-.container-right div {
+.main-part .main-cont-right div {
   border-radius: 1.2rem;
   box-shadow: inset rgba(0, 0, 0, 0.45) 15px 15px 20px -20px;
   position: relative;
 }
-.container-right div a {
+.main-part .main-cont-right div a {
   min-width: 60%;
   padding: 0.3rem;
   position: absolute;
@@ -463,56 +663,59 @@ footer .message fieldset .forms textarea {
   border-bottom: 2px solid #f3f4f6;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.5s ease;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
 }
-.container-right div a i {
+.main-part .main-cont-right div a i {
   margin-left: 0.5rem;
 }
-.container-right div a:hover {
+.main-part .main-cont-right div a:hover {
   background: rgba(0, 0, 0, 0.5);
   color: white;
 }
-.container-right div:hover > a {
+.main-part .main-cont-right div a:active {
+  transform: scale(90%);
+}
+.main-part .main-cont-right div:hover > a {
   visibility: visible;
   opacity: 1;
   bottom: 15%;
 }
-.container-right div:nth-of-type(1) {
+.main-part .main-cont-right div:nth-of-type(1) {
   grid-row: span 6;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-1-3_03-300x450.jpg) center/cover;
 }
-.container-right div:nth-of-type(2), .container-right div:nth-of-type(5), .container-right div:nth-of-type(8) {
+.main-part .main-cont-right div:nth-of-type(2), .main-part .main-cont-right div:nth-of-type(5), .main-part .main-cont-right div:nth-of-type(8) {
   grid-row: span 8;
 }
-.container-right div:nth-of-type(2) {
+.main-part .main-cont-right div:nth-of-type(2) {
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-2-2_01-300x450.jpg) center/cover;
   animation: photos-02 10s ease infinite;
 }
-.container-right div:nth-of-type(3) {
+.main-part .main-cont-right div:nth-of-type(3) {
   grid-row: span 4;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-bl-229-087-l-2_04-300x450.jpg) center/cover;
 }
-.container-right div:nth-of-type(4) {
+.main-part .main-cont-right div:nth-of-type(4) {
   grid-row: span 5;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-pl-050-087-ks-2_03-300x450.jpg) center/cover;
 }
-.container-right div:nth-of-type(5) {
+.main-part .main-cont-right div:nth-of-type(5) {
   background: url(https://etnoxata.com.ua/image/cache/catalog/180/180-23033_102-300x450.jpg) center/cover;
 }
-.container-right div:nth-of-type(6) {
+.main-part .main-cont-right div:nth-of-type(6) {
   grid-row: span 5;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/0001/040-pld-142-085-l-01_04-300x450.jpg) center/cover;
   animation: photos-06 10s ease 3s infinite;
 }
-.container-right div:nth-of-type(7) {
+.main-part .main-cont-right div:nth-of-type(7) {
   grid-row: span 4;
   background: url(https://etnoxata.com.ua/image/cache/catalog/1110/1110-8000-1_01-300x450.jpg) center/cover;
 }
-.container-right div:nth-of-type(8) {
+.main-part .main-cont-right div:nth-of-type(8) {
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-29-3_01-300x450.jpg) center/cover;
   animation: photos-08 10s ease 6s infinite;
 }
-.container-right div:nth-of-type(9) {
+.main-part .main-cont-right div:nth-of-type(9) {
   grid-row: span 6;
   background: url(https://etnoxata.com.ua/image/cache/catalog/040/040-60-6_05-300x450.jpg) center/cover;
 }

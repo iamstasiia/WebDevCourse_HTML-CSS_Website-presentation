@@ -8,9 +8,11 @@ $mc-text: #243033;
 $mc-body: white;
 $mc-light: #f3f4f6;
 $mc-danger: #E6506E;
+$mc-danger-light: #e6738a;
 $mc-warning: #E0DE67;
 $mc-success: #7E9149;
 $mc-dark: #2B5C54;
+$mc-dark-50: hsla(170, 36%, 26%, 50%);
 
 @mixin back-logo {
     background-image: 

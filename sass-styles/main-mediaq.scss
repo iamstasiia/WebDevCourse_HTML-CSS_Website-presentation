@@ -1,0 +1,92 @@
+//SIZES
+@media screen and (max-width: 1260px) {
+    .sizes-part {
+        .size-containers {
+        flex-direction: column;
+
+            .size-cont-left {
+                width: 100%;
+                border: none;
+
+                    main {
+                        height: 30vh;
+                    }
+            }
+
+            .separating-text {
+                writing-mode: horizontal-tb;
+                transform: none;
+            }
+
+            .size-cont-right {
+                width: 100%;
+                border: none;
+                overflow: scroll;
+            }
+            
+        }
+    }
+}
+
+//MAIN
+@media screen and (max-width: 992px) {
+    .main-containers {
+        .main-cont-right {
+            grid-template-columns: repeat(2, 1fr) !important;
+
+            div:nth-of-type(7) {display: none;}
+            div:nth-of-type(8) {display: none;}
+            div:nth-of-type(9) {display: none;}
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-containers {
+        .main-cont-right {
+            grid-template-columns: 1fr !important;
+
+            div:nth-of-type(4) {display: none;}
+            div:nth-of-type(5) {display: none;}
+            div:nth-of-type(6) {display: none;}
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main-containers {
+        flex-direction: column;
+
+        .main-cont-left {
+            width: 100%;
+            border-right: none;
+        }
+
+        .separating-text {
+            writing-mode: horizontal-tb;
+            transform: none;
+        }
+
+        .main-cont-right {
+            width: 100% !important; 
+
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-rows: 20rem !important;
+
+            div:nth-of-type(1) {grid-row: 1/2 !important;}
+            div:nth-of-type(2) {grid-row: 1/2 !important;}
+            div:nth-of-type(3) {grid-row: 1/2 !important;}
+        }
+    }
+}
+
+//SIZES
+@media screen and (max-width: 582px) {
+    .size-cont-left {
+        header {
+            h1 {
+                width: min-content;
+            }
+        }
+    }
+}
