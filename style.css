@@ -16,7 +16,7 @@
 
 @keyframes header-span {
   50% {
-    background: url(../images/back-50-160.gif) center/60px;
+    background: url(../images/back-50-160.jpg) center/60px;
     -webkit-background-clip: text;
   }
 }
@@ -290,7 +290,7 @@ footer .message fieldset .forms textarea {
 }
 .size-cont-left header h1 span {
   display: inline-block;
-  background: url(../images/back-63-384.gif) center/60px;
+  background: url(../images/back-63-384.jpg) center/60px;
   color: transparent;
   -webkit-background-clip: text;
   animation: header-span 5s ease 1s infinite;
@@ -559,7 +559,7 @@ footer .message fieldset .forms textarea {
   display: inline-block;
   width: 240px;
   border: 1px solid black;
-  background: url(../images/back-63-384.gif) center/60px;
+  background: url(../images/back-63-384.jpg) center/60px;
   color: transparent;
   -webkit-background-clip: text;
   animation: header-span 5s ease 1s infinite;
