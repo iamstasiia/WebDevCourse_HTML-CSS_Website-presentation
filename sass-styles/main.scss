@@ -232,7 +232,7 @@
                 border-bottom: 2px solid $mc-light;
                 opacity: 0;
                 visibility: hidden;
-                transition: opacity .5s ease, bottom .5s ease;
+                transition: all .5s ease;
                 
                 i {
                     margin-left: .5rem;
