@@ -3,4 +3,4 @@ This is my first final project from the web development course. Until now, I hav
 
 The result is at this link:
 
-https://iamstasiia.github.io/WebDevCourse_Final_Project_HTML-CSS/
+https://iamstasiia.github.io/WebDevCourse_HTML-CSS_Website-presentation/
